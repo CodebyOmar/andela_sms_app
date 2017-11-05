@@ -1,6 +1,10 @@
 {
   "name": "sms",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.3.0"
+  },
   "description": "studentudent management system",
   "author": "@CodebyOmar <omarmohammed580@gmail.com>",
   "private": true,
