@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const http = axios.create({
-    baseURL: 'http://localhost:4000/students',
+    baseURL: 'https://schoolmanagementsys-cqntiloreq.now.sh/students',
     timeout: 100000
 })
