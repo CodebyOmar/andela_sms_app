@@ -1,0 +1,10 @@
+<div class="tabs is-centered is-boxed is-small">
+  <ul>
+    <li :class="{'is-active':route.isRegisterActive}" @click="checkPresentRoute">
+        <router-link to="/">Register</router-link>
+    </li>
+    <li :class="{'is-active':route.isViewStudentActive}" @click="checkPresentRoute">
+        <router-link to="/allstudents">View Students</router-link>
+    </li>
+  </ul>
+</div>

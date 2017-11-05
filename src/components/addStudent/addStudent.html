@@ -1,0 +1,108 @@
+<div>
+    <h2 class="title is-6">
+        <i class="fa fa-user-plus"></i>
+        <span>Add Students here.</span>
+    </h2>
+    <div class="notification is-success" v-if="validated === true">
+        <h3 class="subtitle is-5" style="text-align:center">{{create_status.toUpperCase()}}</h3>
+    </div>
+    <div class="notification is-danger" v-else-if="error !== ''">
+        <h3 class="subtitle is-5">{{error}}</h3>
+    </div>
+    <div class="field">
+        <p class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="First name" v-model="student.fname">
+            <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+            </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Last name" v-model="student.lname">
+            <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+            </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="date" placeholder="Date of birth" v-model="student.dob">
+            <span class="icon is-small is-left">
+                <i class="fa fa-calendar"></i>
+            </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Registration number" v-model="student.regnum">
+            <span class="icon is-small is-left">
+                <i class="fa fa-id-card"></i>
+            </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Level" v-model="student.level">
+            <span class="icon is-small is-left">
+                <i class="fa fa-arrows-v"></i>
+            </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <div class="control has-icons-left">
+            <div class="select">
+                <select v-model="student.faculty" @change= "getDepts">
+                    <option value="">Select faculty</option>
+                    <option v-for="(fclty,index) in faculties" :value="fclty" :key="index">{{fclty}}</option>
+                </select>
+            </div>
+            <span class="icon is-small is-left">
+                <i class="fa fa-university"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control has-icons-left">
+            <div class="select">
+                <select v-model="student.department" @change="getCourses" :disabled="disable_depts">
+                    <option value="">Select dept...</option>
+                    <option v-for="(dept, index) in depts" :value="dept" :key="index">{{dept}}</option>
+                </select>
+            </div>
+            <span class="icon is-small is-left">
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control has-icons-left">
+            <div class="select">
+                <select v-model="student.cos" :disabled="disable_course">
+                    <option value="">Select course</option>
+                    <option v-for="(course,index) in courses" :value="course" :key="index">{{course}}</option>
+                </select>
+            </div>
+            <span class="icon is-small is-left">
+                <i class="fa fa-graduation-cap"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <button :class="{'button':true, 'is-success':true, 'is-loading':isLoading}" @click="addNewStudent">
+                Add
+            </button>
+        </p>
+    </div>
+
+
+</div>

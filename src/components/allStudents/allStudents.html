@@ -1,0 +1,11 @@
+<div class="content">
+  <h2 class="title is-6">
+      <i class="fa fa-user"></i>
+      <span>All students</span>
+  </h2>
+
+  <blockquote v-for="(student,index) in allStudents" :key="index">
+      <p>{{student.first_name}}</p>
+      <p>{{student.reg_num}}</p>
+  </blockquote>
+</div>
