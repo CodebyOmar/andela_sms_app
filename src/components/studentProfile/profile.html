@@ -1,0 +1,47 @@
+<span>
+<main-tab/>
+<div class="card" style="margin-top:-25px">
+<div class="columns">
+    <div class="column">
+      <p class="sdetail">
+          <span>Name:</span>
+          <span>{{student_.first_name+" "+student_.last_name}}</span>
+      </p>
+      <p class="sdetail">
+        <span>Registration no.:</span>
+        <span>{{student_.reg_num}}</span>
+      </p>
+      <p class="sdetail">
+        <span>DOB:</span>
+        <span>{{student_.d_o_b}}</span>
+      </p>
+      <p class="sdetail">
+        <span>Faculty:</span>
+        <span>{{student_.faculty}}</span>
+      </p>
+      <p class="sdetail">
+        <span>Department:</span>
+        <span>{{student_.department}}</span>
+      </p>
+      <p class="sdetail">
+        <span>Course:</span>
+        <span>{{student_.course_of_study}}</span>
+      </p>
+      <p class="sdetail">
+        <span>Level</span>
+        <span>{{student_.level}}</span>
+      </p>
+    </div>
+
+    <div class="column">
+      <div @click="goBack()" class="is-pulled-right button is-primary is-small">Go back</div><br/><br/>
+      <img
+        src="../../assets/img/user.png"
+        height="150"
+        width="150"
+        class="is-pulled-right"
+      />
+    </div>
+</div>
+</div>
+</span>
