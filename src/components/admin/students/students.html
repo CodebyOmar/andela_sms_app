@@ -1,0 +1,31 @@
+<div class="table is-striped is-bordered is-centered">
+<span v-if="allStudents.length == 0"><FadeLoader :loading="loading"></FadeLoader></span> 
+<table class="is-striped" v-else>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>reg num</th>
+      <th>faculty</th>
+      <th>Department</th>
+      <th>course</th>
+      <th>Level</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr v-for="(student,index) in allStudents" :key="index">
+      <td>{{student.first_name+" "+student.last_name}}</td>
+      <td>{{student.reg_num}}</td>
+      <td>{{student.faculty}}</td>
+      <td>{{student.department}}</td>
+      <td>{{student.course_of_study}}</td>
+      <td>{{student.level}}</td>
+      <td>
+        <a class="button is-danger is-small" @click="delStudent(student.reg_num.toLowerCase())">Delete</a>
+        <a class="button is-success is-small">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
