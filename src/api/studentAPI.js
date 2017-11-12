@@ -25,4 +25,16 @@ export default {
       return await fetch()
     },
 
+    deleteStudent: async (regnum) => {
+      const del = () => {
+        return new Promise((resolve, reject) => {
+          http.delete("/delete/"+regnum)
+          .then((response) => { resolve(response) })
+          .catch((error) => { reject(error) })
+        })
+      }
+
+      return await del()
+    },
+
 }

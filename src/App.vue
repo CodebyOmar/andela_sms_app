@@ -6,10 +6,8 @@
         <span class="column is-one-quarter"></span>
 
         <span class="column">
-          <main-tab/>
-          <div class="card" style="margin-top:-25px">
+          
             <router-view/>
-          </div>
         </span> 
 
         <span class="column is-one-quarter"></span> 

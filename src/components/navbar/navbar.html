@@ -1,5 +1,13 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" style="color:#fff"><strong>SMS</strong></a>
+    <router-link class="navbar-item" style="color:#fff" to="/"><strong>SMS</strong></router-link>
+  </div>
+
+  <div class="is-pulled-right navbar-end">
+    <router-link
+     to="/sms/admin"
+     class="button is-primary navbar-item is-small">
+     Goto admin 
+    </router-link>
   </div>
 </nav>

@@ -5,6 +5,7 @@
 <script>
 import resource from "./resource"
 import {mapActions,mapGetters} from "vuex"
+import mainTab from "@/components/tab/mainTab"
 
 export default {
   name:"AddStudent",
@@ -82,6 +83,7 @@ export default {
         this.isLoading = false
       }
     }
-  }
+  },
+  components:{mainTab}
 }
 </script>

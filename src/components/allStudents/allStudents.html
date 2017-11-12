@@ -1,11 +1,43 @@
-<div class="content">
+<span>
+<main-tab/>
+<div class="card" style="margin-top:-25px">
+<span v-if="allStudents.length == 0"><FadeLoader :loading="loading"></FadeLoader></span>    
+<div class="content" v-else>
   <h2 class="title is-6">
       <i class="fa fa-user"></i>
       <span>All students</span>
   </h2>
 
-  <blockquote v-for="(student,index) in allStudents" :key="index">
-      <p>{{student.first_name}}</p>
-      <p>{{student.reg_num}}</p>
+  <blockquote v-for="(student,index) in allStudents" :key="index" class="columns">
+      <div class="column">
+        <img
+          src="../../assets/img/user.png"
+          height="120"
+          width="120" />
+          <div>
+              <router-link 
+                :to="'/allstudents/profile/'+JSON.stringify(student)">
+              view profile
+              </router-link>
+          </div>
+      </div>  
+
+      <div class="column">
+        <p>
+            <span>Name:</span>
+            <span>{{student.first_name+" "+student.last_name}}</span>
+        </p>
+        <p>
+            <span>Reg. no:</span>
+            {{student.reg_num}}
+        </p>
+        <p>
+            <span>Level:</span>
+            <span>{{student.level}}</span>
+        </p>
+      </div>
+      
   </blockquote>
 </div>
+</div>
+</span>
